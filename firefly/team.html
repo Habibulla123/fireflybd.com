@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Our Team</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap css link -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="icon" href="img/firefly-logo.png">
+    <!-- aos link -->
+    <link rel="stylesheet" type="text/css" href="css/aos.css">
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body{
+        font-family: arial,sans-serif;
+      }
+      html{
+        scroll-behavior: smooth;
+      }
+
+      /*navbar code here*/
+      .nav-mystyle{
+        background-color: #1D1A1A;
+        border-bottom: 3px solid #17A2B8;
+      }
+      #navbarNav .nav-item .nav-link{
+        color: #fff;
+        position: relative;
+        border-radius: 3px;
+        transition: 0.4s ease-in-out;
+      }
+      #navbarNav .nav-item .nav-link:hover{
+        color: #17A2B8;
+      }
+      #navbarNav .nav-item .active{
+        background-color: #23272B; 
+        color: #17A2B8;
+      }
+      #navbarNav .nav-item .nav-link::after{
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        background-color: #17A2B8;
+        bottom: 5px;
+        left: 15%;
+        transition: 0.5s;
+      }
+      #navbarNav .nav-item .nav-link:hover::after{
+        width: 70%;
+      }
+      .navbar-toggler{
+        background-color: #2E8FB7;
+        padding: 5px;
+      }
+      
+      @media(max-width: 992px){
+        #navbarNav .nav-item .nav-link{
+          padding: 5px 10px;
+        }
+        #navbarNav .navbar-nav{
+          margin: 20px 5px;
+          padding-right: 35px;
+          padding-left: 35px;
+        }
+        #navbarNav .nav-item .nav-link{
+          letter-spacing: 3px;
+        }
+        #navbarNav .nav-item .nav-link:hover{
+          letter-spacing: 6px;
+        }
+        #navbarNav .nav-item .nav-link::after{
+          display: none;
+        }
+      }
+      /*navbar style end*/
+    /*team header section here*/
+     #team-header-sec{
+        width: 100%;
+        height: 60vh;
+        background-image: url('img/about-header.jpg');
+        background-clip: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+      
+      #team-header-sec .container h1{
+        color: #fff;
+        font-size: 45px;
+        font-weight: bolder;
+      }
+      #team-header-sec .container p{
+        color: #fff;
+        opacity: 0.4;
+      }
+
+      /*team card style*/
+      #team-card-sec .card{
+        border: 1px solid #17A2B8;
+        transition: .4s;
+      }
+      #team-card-sec .card:hover{
+        box-shadow: 0 0 5px #17A2B8;
+      }
+      #team-card-sec .card .card-body small{
+        background-color: #F1F1F1;
+        color: #C1C1C1;
+        padding: 5px 8px;
+        border-radius: 3px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        font-size: 10px;
+      }
+      #team-biodata h3 b,#team-card-sec h3 b{
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      #team-biodata #accordion h5{
+        cursor: pointer;
+        color: white;
+      }
+      #team-biodata #accordion .card{
+        border: none;
+      }
+      #team-biodata #accordion .card .card-body{
+        border: 1px solid #17A2B8;
+      }
+      #team-biodata #accordion .card .card-header{
+        background-color: #17A2B8; 
+        border: none;
+        border-top: 2px solid white;
+      }
+      #team-biodata #accordion .card ul{
+        margin: 0;
+        padding: 0;
+      }
+      #team-biodata #accordion .card ul li{
+        font-family: sans-serif;
+        list-style-type: none;
+
+        padding: 6px 10px;
+      }
+      #team-biodata #accordion .card ul li:nth-child(odd){
+        background-color: #F1F1F1;
+        border-radius: 3px;
+      }
+      /*footer style start here*/
+      .footer{
+        background: #0D0A0A;
+      }
+      .footer p{
+        text-align: center;
+        color: #343A40;
+      }
+      .footer .designer-link{
+        color: #343A40;  
+        font-style: italic;
+        text-decoration: none;
+      }
+      .footer .designer-link:hover{
+        color: #44505A;
+      }
+      .footer .mobile-social{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .footer .mobile-social .center{
+        padding-top: 15px;
+      }
+      .footer .mobile-social a{
+        color: #44505A;
+        text-decoration: none;
+        padding: 10px 7px;
+        font-size: 20px;
+        transition: .5s;
+      }
+      .footer .mobile-social .fa-facebook:hover{
+        color: #2245BB;
+      }
+      .footer .mobile-social .fa-youtube:hover{
+        color: #F90000;
+      }
+      .footer .mobile-social .fa-whatsapp:hover{
+        color: #13D72C;
+      }
+      .footer .mobile-social .fa-twitter:hover{
+        color: #1EFFFF;
+      }
+    </style>
+</head>
+<body>
+	<!-- navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg nav-mystyle sticky-top">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/firefly-logo.png" class="img-fluid" width="50" height="50" alt="M">
+          <h4 class="d-md-inline d-none align-middle text-info" style="font-family: 'Bauhaus 93';">FireFly Bd</h4>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-left" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="team.html">Meet Our Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.youtube.com/channel/UC1Mqqdg3XjQNzAeyJEqtNUQ/featured" target="_blank">Videos</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<!-- Team header section -->
+    <section id="team-header-sec">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12 text-center py-5">
+            <h1 data-aos="fade-down" data-aos-duration="2000">Meet Our Team</h1>
+            <p data-aos="fade-up" data-aos-duration="3000" class="d-none d-md-block">I have highlighted this page in front of you with pictures of all our members</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- team card section -->
+    <section class="bg-light" id="team-card-sec">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12 text-center pb-5" data-aos="fade-up" data-aos-duration="2000">
+            <h3 class="text-info text-center pb-2"><b>-:-</b> Our Team <b>-:-</b></h3>
+            <p>Our channel needs some new members, you can contact us if you want</p>
+            <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#contact_modal">Join Our Team</a >
+
+            <div class="modal fade" id="contact_modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header bg-info text-light">
+                    <h5 class="modal-title">
+                      Registration Form
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="text-light"> &times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="https://formspree.io/f/xpzklgyv" method="POST">
+                      <div class="form-group text-left">
+                        <label for="fname">Name</label>
+                        <input type="text" name="Name" id="fname" class="form-control form-control-sm" placeholder="Your name">
+                      </div>
+                      <div class="form-group text-left">
+                        <label for="email">Email</label>
+                        <input type="email" name="Email" id="email" class="form-control form-control-sm" placeholder="Your email">
+                      </div>
+                      <div class="form-group text-left">
+                        <label for="cnum">Phone Number</label>
+                        <input type="text" name="Contact Number" id="cnum" class="form-control form-control-sm" placeholder="Your phone Number">
+                      </div>
+                      <div class="form-group text-left">
+                        <label>What are you interested in?</label>
+                        <select class="form-control form-control-sm">
+                          <option>choose</option>
+                          <option>Actor</option>
+                          <option>Scriptwriter</option>
+                          <option>Production</option>
+                          <option>Actor Helper</option>
+                          <option>Editor</option>
+                          <option>Cameraman</option>
+                        </select>
+                      </div>
+                      <button class="btn btn-info btn-sm mt-2">Submit</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 co-12 mb-2">
+            <div class="card">
+              <a href="https://web.facebook.com/hasan129547" target="_blank" data-aos="zoom-in" data-aos-duration="2000">
+                  <img src="img/hasan1.jpg" title="Hasan" class="card-img-top img-fluid h-100">
+              </a>
+              <div class="card-body" data-aos="zoom-out" data-aos-duration="2000">
+                <h6>H.I.Hasan</h6>
+                <small>Editor</small>
+                <small>Actor</small>
+                <small>ScriptWriter</small>
+                <br>
+                <a href="" class="btn btn-outline-primary btn-sm mt-2">View Profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 mb-2">
+            <div class="card">
+              <a href="https://web.facebook.com/" target="_blank" data-aos="zoom-in" data-aos-duration="2000">
+                  <img src="img/jakaria.jpg" title="jakaria" class="card-img-top img-fluid h-100">
+              </a>
+              <div class="card-body" data-aos="zoom-out" data-aos-duration="2000">
+                <h6>Parvej Jakaria</h6>
+                <small>Director</small>
+                <small>Actor</small>
+                <small>ScriptWriter</small> <br>
+                <a href="" class="btn btn-outline-primary btn-sm mt-2">View Profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 mb-2">
+            <div class="card">
+              <a href="https://web.facebook.com/" target="_blank" data-aos="zoom-in" data-aos-duration="2000">
+                  <img src="img/ebrahim.jpg" title="ibrahim" class="card-img-top img-fluid h-100">
+              </a>
+              <div class="card-body" data-aos="zoom-out" data-aos-duration="2000">
+                <h6>Ibrahim Hossen Limon</h6>
+                <small>Actor</small><br>
+                <a href="" class="btn btn-outline-primary btn-sm mt-2">View Profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 mb-2">
+            <div class="card">
+              <a href="https://web.facebook.com/hasan129547" target="_blank" data-aos="zoom-in" data-aos-duration="2000">
+                  <img src="img/amirul.jpg" title="amirul" class="card-img-top img-fluid h-100">
+              </a>
+              <div class="card-body" data-aos="zoom-out" data-aos-duration="2000">
+                <h6>Amirul Islam</h6>
+                <small>Actor</small><br>
+                <a href="" class="btn btn-outline-primary btn-sm mt-2">View Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Team Biodata -->
+  	<section id="team-biodata">
+  		<div class="container py-5">
+		    <div class="row">
+		      <div class="col-12">
+		      	<div class="py-5" data-aos="fade-up" data-aos-duration="2000">
+              <h3 class="text-info text-center pb-2"><b>-:-</b> Team Information <b>-:-</b></h3>
+              <p class="text-center text-muted">Team Information is below here in tablist and click this open and seen it</p>   
+            </div>
+		         <!-- ACCORDION -->
+		        <div id="accordion" role="tablist">
+		          <!-- first person -->
+              <div class="card">
+		            <div class="card-header" role="tab">
+		              <h5 class="mb-0">
+		                <div data-toggle="collapse" href="#collapse1">
+		                  <i class="fa fa-arrow-circle-down" style="font-size: 16px; float: right;"></i> H.I.Hasan
+		                </div>
+		              </h5>
+		            </div>
+		            <div id="collapse1" class="collapse show" data-parent="#accordion">
+		              <div class="card-body p-0 m-0">
+                    <h6 class="text-center text-muted py-2 m-0 d-block" style="background-color: #F1F1F1;">Personal Information</h6>
+                    <div class="row no-gutters">
+                      <div class="col-6 bg-light pl-3 pt-3 pb-3">
+                        <ul>
+                          <li>Name</li>
+                          <li>Address</li>
+                          <li>City</li>
+                          <li>Distric</li>
+                          <li>Blood Group</li>
+                          <li>Gender</li>
+                          <li>Contact</li>
+                          <li>Facebook Id</li>
+                          <li>Religion</li>
+                          <li>Nationality</li>
+                          <li>Marital Status</li>
+                        </ul>
+                      </div>
+                      <div class="col-6 bg-light pr-3 pt-3 pb-3">
+                        <ul>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Hasan</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 6 No Koyra</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Dhaka</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Khulna</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> O<sup>+</sup></li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Male</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 01947370798</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> <a href="">H.I.Hasan</a></li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Islam</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Bangladeshi</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Unmarried</li>
+                        </ul>
+                      </div>
+                    </div>
+		              </div>
+		            </div>
+		          </div>
+              <!-- second person -->
+		          <div class="card" role="tablist">
+		            <div class="card-header">
+		              <h5 class="mb-0">
+		                <div data-toggle="collapse" href="#collapse2">
+		                  <i class="fa fa-arrow-circle-down" style="font-size: 16px; float: right;"></i> Parvej Jakaria
+		                </div>
+		              </h5>
+		            </div>
+		            <div id="collapse2" class="collapse" data-parent="#accordion">
+		              <div class="card-body p-0 m-0">
+		                <h6 class="text-center text-muted py-2 m-0 d-block" style="background-color: #F1F1F1;">Personal Information</h6>
+                    <div class="row no-gutters">
+                      <div class="col-6 bg-light pl-3 pt-3 pb-3">
+                        <ul>
+                          <li>Name</li>
+                          <li>Address</li>
+                          <li>City</li>
+                          <li>Distric</li>
+                          <li>Blood Group</li>
+                          <li>Gender</li>
+                          <li>Contact</li>
+                          <li>Religion</li>
+                          <li>Nationality</li>
+                          <li>Marital Status</li>
+                        </ul>
+                      </div>
+                      <div class="col-6 bg-light pr-3 pt-3 pb-3">
+                        <ul>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Jakaria</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Bedkashi</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Dhaka</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Khulna</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> B<sup>+</sup></li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Male</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 01959077041</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Islam</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Bangladeshi</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Unmarried</li>
+                        </ul>
+                      </div>
+                    </div>
+		              </div>
+		            </div>
+		          </div>
+              <!-- third person -->
+		          <div class="card" role="tablist">
+		            <div class="card-header">
+		              <h5 class="mb-0">
+		                <div data-toggle="collapse" href="#collapse3">
+		                  <i class="fa fa-arrow-circle-down" style="font-size: 16px; float: right;"></i> Ibrahim Hossen Limon	
+		                </div>
+		              </h5>
+		            </div>
+		            <div id="collapse3" class="collapse" data-parent="#accordion">
+		              <div class="card-body p-0 m-0">
+                    <h6 class="text-center text-muted py-2 m-0 d-block" style="background-color: #F1F1F1;">Personal Information</h6>
+                    <div class="row no-gutters">
+                      <div class="col-6 bg-light pl-3 pt-3 pb-3">
+                        <ul>
+                          <li>Name</li>
+                          <li>Address</li>
+                          <li>City</li>
+                          <li>Distric</li>
+                          <li>Blood Group</li>
+                          <li>Gender</li>
+                          <li>Contact</li>
+                          <li>Religion</li>
+                          <li>Nationality</li>
+                          <li>Marital Status</li>
+                        </ul>
+                      </div>
+                      <div class="col-6 bg-light pr-3 pt-3 pb-3">
+                        <ul>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Ibrahim</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 6 No Koyra</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Dhaka</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Khulna</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> A<sup>+</sup></li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Male</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 019</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Islam</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Bangladeshi</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Unmarried</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+		            </div>
+		          </div>
+              <!-- four person -->
+              <div class="card" role="tablist">
+                <div class="card-header">
+                  <h5 class="mb-0">
+                    <div data-toggle="collapse" href="#collapse4">
+                      <i class="fa fa-arrow-circle-down" style="font-size: 16px; float: right;"></i> Amirul Islam Bilali
+                    </div>
+                  </h5>
+                </div>
+                <div id="collapse4" class="collapse" data-parent="#accordion">
+                  <div class="card-body p-0 m-0">
+                    <h6 class="text-center text-muted py-2 m-0 d-block" style="background-color: #F1F1F1;">Personal Information</h6>
+                    <div class="row no-gutters">
+                      <div class="col-6 bg-light pl-3 pt-3 pb-3">
+                        <ul>
+                          <li>Name</li>
+                          <li>Address</li>
+                          <li>City</li>
+                          <li>Distric</li>
+                          <li>Blood Group</li>
+                          <li>Gender</li>
+                          <li>Contact</li>
+                          <li>Religion</li>
+                          <li>Nationality</li>
+                          <li>Marital Status</li>
+                        </ul>
+                      </div>
+                      <div class="col-6 bg-light pr-3 pt-3 pb-3">
+                        <ul>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Amirul</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 6 No Koyra</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Dhaka</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Khulna</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> O<sup>+</sup></li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Male</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 019</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Islam</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Bangladeshi</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Unmarried</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- third person -->
+              <div class="card" role="tablist">
+                <div class="card-header">
+                  <h5 class="mb-0">
+                    <div data-toggle="collapse" href="#collapse5">
+                      <i class="fa fa-arrow-circle-down" style="font-size: 16px; float: right;"></i> Anisur Rahaman 
+                    </div>
+                  </h5>
+                </div>
+                <div id="collapse5" class="collapse" data-parent="#accordion">
+                  <div class="card-body p-0 m-0">
+                    <h6 class="text-center text-muted py-2 m-0 d-block" style="background-color: #F1F1F1;">Personal Information</h6>
+                    <div class="row no-gutters">
+                      <div class="col-6 bg-light pl-3 pt-3 pb-3">
+                        <ul>
+                          <li>Name</li>
+                          <li>Address</li>
+                          <li>City</li>
+                          <li>Distric</li>
+                          <li>Blood Group</li>
+                          <li>Gender</li>
+                          <li>Contact</li>
+                          <li>Religion</li>
+                          <li>Nationality</li>
+                          <li>Marital Status</li>
+                        </ul>
+                      </div>
+                      <div class="col-6 bg-light pr-3 pt-3 pb-3">
+                        <ul>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Anisur</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Bedkashi</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Dhaka</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Khulna</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> O<sup>+</sup></li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Male</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> 019</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Islam</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Bangladeshi</li>
+                          <li><span class="mr-md-2 mr-sm-0">:</span> Unmarried</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+		        </div>
+		      </div>
+		    </div>
+	  	</div>
+  	</section>
+
+
+  	<!-- footer section here -->
+    <section class="footer">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="m-0">
+              Copyright &copy; 2021
+              All rights reserved<br> Designed by
+              <a class="designer-link" href="https://web.facebook.com/hasan129547" target="_blank">H.I.Hasan</a>
+            </p>
+            <div class="mobile-social d-md-none d-block">
+              <div class="center">
+                <a href="">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- link up below -->
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/solid.min.js"></script>
+    <script src="js/brands.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
